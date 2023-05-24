@@ -1,0 +1,14 @@
+spring:
+  flyway:
+    user: test
+    password: test
+origin:
+  host: localhost
+  domain: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tracie
+    username: postgres
+    password: postgres
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 25

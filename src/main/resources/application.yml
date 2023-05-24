@@ -1,0 +1,30 @@
+spring:
+  config:
+    import: ""
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      properties:
+        request.timeout.ms: 500
+        delivery.timeout.ms: 1000
+        max.block.ms: 1000
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dimas-db?currentSchema=dimas-db
+    username: postgres
+    password: postgres
+    hikari.minimum-idle: 40
+    hikari.maximum-pool-size: 40
+  flyway:
+    user: postgres
+    password: postgres
+logging:
+  config:
+kafka:
+  producer:
+    send-timeout-ms: 2000
+origin:
+  host: localhost
+  domain: local
+server:
+  port: 8100
+
