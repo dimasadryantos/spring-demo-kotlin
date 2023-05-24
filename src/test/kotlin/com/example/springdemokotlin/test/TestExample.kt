@@ -1,6 +1,6 @@
-package com.example.springdemokotlin.test.config
+package com.example.springdemokotlin.test
 
-import com.example.springdemokotlin.test.ComponentTest
+import com.example.springdemokotlin.test.config.ComponentTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate

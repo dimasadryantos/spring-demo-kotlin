@@ -1,4 +1,4 @@
-package com.example.springdemokotlin.test
+package com.example.springdemokotlin.test.config
 
 import com.example.springdemokotlin.test.config.TestDatabaseConfiguration
 import com.example.springdemokotlin.test.config.TestWithDatabase
