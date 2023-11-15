@@ -32,7 +32,7 @@
 
         <!-- test dependencies -->
         <mockito.kotlin.version>4.1.0</mockito.kotlin.version>
-        <testcontainer.version>1.18.1</testcontainer.version>
+        <testcontainer.version>1.19.2</testcontainer.version>
         <swagger-inflection.version>2.0.9</swagger-inflection.version>
 
         <!-- plugins -->
@@ -67,6 +67,16 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>${springdoc.openapi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>kafka</artifactId>
+            <version>${testcontainer.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
         <!-- Kotlin -->
@@ -118,6 +128,11 @@
 
         <!-- test -->
         <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -166,6 +181,10 @@
             <artifactId>swagger-inflector</artifactId>
             <scope>test</scope>
             <exclusions>
+                <exclusion>
+                    <artifactId>jackson-module-jaxb-annotations</artifactId>
+                    <groupId>com.fasterxml.jackson.module</groupId>
+                </exclusion>
                 <exclusion>
                     <artifactId>swagger-jaxrs2</artifactId>
                     <groupId>io.swagger.core.v3</groupId>
