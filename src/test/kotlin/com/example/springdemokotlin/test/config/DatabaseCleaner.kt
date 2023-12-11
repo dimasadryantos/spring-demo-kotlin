@@ -1,6 +1,5 @@
 package com.example.springdemokotlin.test.config
 
-
 import java.lang.annotation.Inherited
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.TestComponent
@@ -22,7 +21,7 @@ class DatabaseCleaner @Autowired constructor(private val jdbcTemplate: JdbcTempl
     @EventListener
     fun deleteFromAllTables(event: AfterTestMethodEvent) {
         JdbcTestUtils.deleteFromTables(
-            jdbcTemplate
+            jdbcTemplate,
         )
     }
 }

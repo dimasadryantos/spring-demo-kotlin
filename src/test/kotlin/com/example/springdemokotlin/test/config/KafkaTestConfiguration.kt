@@ -33,7 +33,7 @@ internal class KafkaTestConfiguration : ApplicationContextInitializer<Configurab
         TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
             configurableApplicationContext,
             "spring.kafka.bootstrap-servers=${kafkaContainer.bootstrapServers}",
-            "spring.kafka.consumer.group-id=${createRandomKafkaConsumerGroupId()}"
+            "spring.kafka.consumer.group-id=${createRandomKafkaConsumerGroupId()}",
         )
     }
 
@@ -44,7 +44,7 @@ internal class KafkaTestConfiguration : ApplicationContextInitializer<Configurab
 @TestConfiguration
 internal class KafkaTestInitializer @Autowired constructor(
     @Suppress("SpringJavaInjectionPointsAutowiringInspection")
-    private val kafkaListenerEndpointRegistry: KafkaListenerEndpointRegistry
+    private val kafkaListenerEndpointRegistry: KafkaListenerEndpointRegistry,
 ) {
     @EventListener(ContextRefreshedEvent::class)
     fun waitForAssignment() {
