@@ -8,4 +8,5 @@ import org.springframework.test.context.ContextConfiguration
 @AutoConfigureMockMvc
 @ContextConfiguration(initializers = [TestDatabaseConfiguration::class, KafkaTestConfiguration::class])
 @SpringBootTest
+@KafkaSpringBootTest
 annotation class ComponentTest

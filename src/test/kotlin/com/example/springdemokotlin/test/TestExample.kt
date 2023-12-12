@@ -3,17 +3,13 @@ package com.example.springdemokotlin.test
 import com.example.springdemokotlin.test.config.ComponentTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 
 @ComponentTest
-class TestExample
-@Autowired
-constructor(
+class TestExample @Autowired constructor(
     private val mockMvc: MockMvc,
-    private val jdbcTemplate: JdbcTemplate,
 ) {
     @Test
     fun `given invalid uri then return 404`() {

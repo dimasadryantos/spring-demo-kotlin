@@ -28,3 +28,12 @@ origin:
 server:
   port: 8100
 
+example-one:
+  consumer-enabled: true
+  group-id: movie-one-group-id
+  topic: example-topic-one
+example-two:
+  consumer-enabled: true
+  group-id: movie-two-group-id
+  topic: example-topic-two
+
