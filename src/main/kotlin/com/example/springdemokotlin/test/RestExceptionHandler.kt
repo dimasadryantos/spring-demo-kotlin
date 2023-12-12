@@ -1,6 +1,7 @@
 package com.example.springdemokotlin.test
 
 import mu.KotlinLogging
+import org.springframework.http.HttpStatus
 import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
 import org.springframework.http.converter.HttpMessageNotReadableException
 import org.springframework.web.HttpMediaTypeNotSupportedException
@@ -9,14 +10,15 @@ import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
+import org.springframework.http.HttpStatus.METHOD_NOT_ALLOWED
+import org.springframework.http.HttpStatus.BAD_REQUEST
 
 private val log = KotlinLogging.logger {}
 
 @ControllerAdvice
 class RestExceptionHandler {
-
     @ExceptionHandler(value = [HttpMediaTypeNotSupportedException::class])
-    @ResponseStatus(NOT_ACCEPTABLE)
+    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
     fun handleMediaTypeNotSupported() = Unit
 
     @ExceptionHandler(value = [HttpRequestMethodNotSupportedException::class])

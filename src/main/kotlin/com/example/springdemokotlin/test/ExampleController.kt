@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class ExampleController {
-
     @GetMapping(value = ["/validURI/{id}"])
-    fun exampleMethod(@PathVariable id: Long) {
+    fun exampleMethod(
+        @PathVariable id: Long,
+    ) {
         println(" COME IN ========================= ")
     }
 }

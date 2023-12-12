@@ -14,7 +14,6 @@ import org.testcontainers.containers.KafkaContainer
 import org.testcontainers.utility.DockerImageName
 
 internal class KafkaTestConfiguration : ApplicationContextInitializer<ConfigurableApplicationContext> {
-
     companion object {
         private var initialized = false
         private val kafkaContainer = KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.4.3"))
@@ -37,12 +36,13 @@ internal class KafkaTestConfiguration : ApplicationContextInitializer<Configurab
         )
     }
 
-    private fun createRandomKafkaConsumerGroupId() =
-        RandomStringUtils.randomAlphabetic(15)
+    private fun createRandomKafkaConsumerGroupId() = RandomStringUtils.randomAlphabetic(15)
 }
 
 @TestConfiguration
-internal class KafkaTestInitializer @Autowired constructor(
+internal class KafkaTestInitializer
+@Autowired
+constructor(
     @Suppress("SpringJavaInjectionPointsAutowiringInspection")
     private val kafkaListenerEndpointRegistry: KafkaListenerEndpointRegistry,
 ) {

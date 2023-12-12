@@ -5,7 +5,6 @@ import org.springframework.context.ConfigurableApplicationContext
 import org.testcontainers.containers.PostgreSQLContainer
 
 internal class TestDatabaseConfiguration : ApplicationContextInitializer<ConfigurableApplicationContext> {
-
     companion object {
         private var initialized = false
         private val postgresqlContainer = PostgreSQLContainer<Nothing>("postgres:13.7")

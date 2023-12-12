@@ -16,8 +16,9 @@ import java.lang.annotation.Inherited
 annotation class CleanDatabaseAfterEachTest
 
 @TestComponent
-class DatabaseCleaner @Autowired constructor(private val jdbcTemplate: JdbcTemplate) {
-
+class DatabaseCleaner
+@Autowired
+constructor(private val jdbcTemplate: JdbcTemplate) {
     @EventListener
     fun deleteFromAllTables(event: AfterTestMethodEvent) {
         JdbcTestUtils.deleteFromTables(
