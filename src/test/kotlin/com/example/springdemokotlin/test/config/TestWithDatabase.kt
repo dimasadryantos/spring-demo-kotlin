@@ -8,6 +8,5 @@ import java.lang.annotation.Inherited
 @Retention(AnnotationRetention.RUNTIME)
 @Inherited
 @ContextConfiguration(initializers = [TestDatabaseConfiguration::class])
-@CleanDatabaseAfterEachTest
-@ActiveProfiles("local")
+@ActiveProfiles("test")
 annotation class TestWithDatabase

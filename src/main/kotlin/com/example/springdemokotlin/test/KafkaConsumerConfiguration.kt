@@ -27,8 +27,8 @@ class KafkaConsumerConfiguration {
     fun kafkaListenerContainerFactory(
         consumerFactory: ConsumerFactory<String, String>,
         @Qualifier(KAFKA_OBJECT_MAPPER_QUALIFIER) objectMapper: ObjectMapper,
-        @Value("\${kafka.client.backoffperiod}") backOffPeriod: Long,
-        @Value("\${kafka.client.maxAttempts}") maxAttempts: Long,
+        @Value("100") backOffPeriod: Long,
+        @Value("10") maxAttempts: Long,
     ): ConcurrentKafkaListenerContainerFactory<String, String> {
         val factory = createBaseFactory(consumerFactory, backOffPeriod, maxAttempts)
         factory.setRecordMessageConverter(StringJsonMessageConverter(objectMapper))
@@ -39,8 +39,8 @@ class KafkaConsumerConfiguration {
     @Bean(KAFKA_RAW_LISTENER_CONTAINER_FACTORY_BEAN)
     fun kafkaRawListenerContainerFactory(
         consumerFactory: ConsumerFactory<String, String>,
-        @Value("\${kafka.client.backoffperiod}") backOffPeriod: Long,
-        @Value("\${kafka.client.maxAttempts}") maxAttempts: Long,
+        @Value("100") backOffPeriod: Long,
+        @Value("10") maxAttempts: Long,
     ) = createBaseFactory(consumerFactory, backOffPeriod, maxAttempts)
 
     private fun createBaseFactory(
