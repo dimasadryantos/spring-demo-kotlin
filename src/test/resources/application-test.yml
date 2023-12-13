@@ -12,3 +12,8 @@ origin:
     hikari:
       minimum-idle: 3
       maximum-pool-size: 25
+example-one:
+  consumer-enabled: false # disabled by default as Kafka is not running in all test cases
+example-two:
+  consumer-enabled: false
+

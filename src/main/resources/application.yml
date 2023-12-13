@@ -8,15 +8,6 @@ spring:
         request.timeout.ms: 500
         delivery.timeout.ms: 1000
         max.block.ms: 1000
-  datasource:
-    url: jdbc:postgresql://localhost:5432/dimas-db?currentSchema=dimas-db
-    username: postgres
-    password: postgres
-    hikari.minimum-idle: 40
-    hikari.maximum-pool-size: 40
-  flyway:
-    user: postgres
-    password: postgres
 logging:
   config:
 kafka:
@@ -27,4 +18,13 @@ origin:
   domain: local
 server:
   port: 8100
+
+example-one:
+  consumer-enabled: true
+  group-id: movie-one-group-id
+  topic: example-topic-one
+example-two:
+  consumer-enabled: true
+  group-id: movie-two-group-id
+  topic: example-topic-two
 
